@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-khu-navy: #0c1e3a;
+  --color-khu-blue: #1a3a6b;
+  --color-khu-gold: #c9a227;
+  --color-khu-gold-light: #e8c84a;
+  --color-khu-slate: #64748b;
+  --color-khu-cream: #f8f6f1;
+  --color-khu-surface: #ffffff;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-khu-cream text-khu-navy antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      var(--color-khu-navy) 0%,
+      var(--color-khu-blue) 50%,
+      #1e4d8c 100%
+    );
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
