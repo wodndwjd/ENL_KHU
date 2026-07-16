@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Energy Nanomaterials Laboratory",
-  shortName: "Kyung Hee University",
-  university: ENL",
+  shortName: "ENL",
+  university: "Kyung Hee University",
   department: "Department of Electronic Engineering",
   tagline: "Pioneering next-generation energy and optoelectronic nanomaterials",
   description:
