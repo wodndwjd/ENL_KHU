@@ -12,7 +12,7 @@ export const labNews: NewsItem[] = [
   {
     id: 1,
     date: "2026.06",
-    title: "Dr. Namita Ahir joined ENL as a Postdoctoral Researcher.",
+    title: "Jae Hyeok's polystyrene work is highlighted in Perovskite Info.",
     category: "news",
   },
   {
