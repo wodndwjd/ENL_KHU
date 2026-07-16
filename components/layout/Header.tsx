@@ -15,11 +15,13 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-khu-navy/95 backdrop-blur-md">
       <div className="container-narrow flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex flex-col">
+          {/* 위쪽: Kyung Hee University (기존 ENL의 금색 & 작은 폰트 적용) */}
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-khu-gold">
-            {siteConfig.shortName}
-          </span>
-          <span className="text-sm font-bold text-white transition-colors group-hover:text-khu-gold-light sm:text-base">
             {siteConfig.university}
+          </span>
+          {/* 아래쪽: ENL (기존 학교 이름의 흰색 & 큰 폰트 적용) */}
+          <span className="text-sm font-bold text-white transition-colors group-hover:text-khu-gold-light sm:text-base">
+            {siteConfig.shortName}
           </span>
         </Link>
 
