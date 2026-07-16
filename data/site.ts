@@ -25,11 +25,10 @@ export const siteConfig = {
 
 export const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/research", label: "Research" },
-  { href: "/publications", label: "Publications" },
-  { href: "/people", label: "People" },
   { href: "/news", label: "News" },
-  { href: "/facilities", label: "Facilities" },
+  { href: "/research", label: "Research" },
+  { href: "/people", label: "Members" }, // 👈 href는 기존 /people 페이지를 유지하며, 라벨을 Members로 변경했습니다!
+  { href: "/publications", label: "Publications" },
   { href: "/join-us", label: "Join Us" },
   { href: "/contact", label: "Contact" },
 ] as const;
