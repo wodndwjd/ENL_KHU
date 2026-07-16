@@ -12,8 +12,6 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    /* 💡 [초강력 처방] 클래스 단위(Tailwind)뿐만 아니라 inline style에 !important 처리를 주어 
-       전역 CSS나 브라우저 기본 스타일이 가로선을 강제로 긋는 것을 완벽하게 방어합니다. */
     <header 
       className="absolute left-0 right-0 top-0 z-50 bg-transparent border-none outline-none shadow-none"
       style={{ 
@@ -46,7 +44,7 @@ export function Header() {
           </div>
         </Link>
 
-        {/* 2. 오른쪽 영역: [메뉴 버튼들] + [학교 로고] */}
+        {/* 2. 오른쪽 영역: [메뉴 버튼들] + [대학원 로고 링크] */}
         <div className="flex items-center gap-6">
           <nav className="hidden items-center gap-1 lg:flex">
             {navLinks.map((link) => (
@@ -65,14 +63,21 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="relative h-10 w-auto flex items-center border-l border-white/20 pl-4 sm:pl-6">
+          {/* 💡 [수정 사항] 단순 div 노출에서 경희대 일반대학원 링크를 담은 <a> 태그로 수정했습니다. */}
+          <a 
+            href="https://gskh.khu.ac.kr/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="relative h-10 w-auto flex items-center border-l border-white/20 pl-4 sm:pl-6 hover:opacity-80 transition-opacity"
+            title="경희대학교 일반대학원 홈페이지로 이동"
+          >
             <img 
               src="/khu_logo.png" 
               alt="Kyung Hee University Logo" 
               className="h-10 w-auto object-contain"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
-          </div>
+          </a>
 
           <button
             type="button"
