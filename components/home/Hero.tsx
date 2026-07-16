@@ -2,30 +2,16 @@
 
 import Link from "next/link";
 import { ArrowRight, Bell } from "lucide-react";
-
-// 최신 뉴스 데이터
-const heroNews = [
-  {
-    id: 1,
-    date: "2026.06",
-    title: "Dr. Namita Ahir joined ENL as a Postdoctoral Researcher.",
-  },
-  {
-    id: 2,
-    date: "2026.05",
-    title: "Sang-Hyun Oh (Alumnus) promoted to Ph.D. Candidate at UMN CEMS.",
-  },
-  {
-    id: 3,
-    date: "2025.10",
-    title: "Ammarah Razzaq joined our lab for her Ph.D. program.",
-  },
-];
+// 💡 [2단계 적용] 1단계에서 만든 데이터 파일에서 최신 뉴스 목록을 가져옵니다.
+import { labNews } from "@/data/news";
 
 export function Hero() {
+  // 💡 데이터가 아무리 늘어나도 대문 전광판에는 항상 상위 3개 최신 뉴스만 보여줍니다.
+  const heroNews = labNews.slice(0, 3);
+
   return (
     <section 
-      /* 💡 높이를 min-h-[50vh]로 줄여 한눈에 쏙 들어오게 맞췄습니다. */
+      /* 높이를 min-h-[50vh]로 줄여 한눈에 쏙 들어오게 맞췄습니다. */
       className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-slate-900 text-white pt-28 pb-10"
       style={{
         border: "none",
@@ -43,7 +29,7 @@ export function Hero() {
             e.currentTarget.style.display = "none";
           }}
         />
-        {/* 💡 어두운 그림자 장막의 투명도를 opacity-30으로 옅게 주어 배경 사진이 아주 환하게 보입니다. */}
+        {/* 어두운 그림자 장막의 투명도를 opacity-30으로 옅게 주어 배경 사진이 아주 환하게 보입니다. */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950 opacity-30" />
       </div>
 
@@ -84,7 +70,7 @@ export function Hero() {
 
           {/* [우측 영역] 가로폭이 70% 수준으로 슬림해진 최신 뉴스 미니 보드 */}
           <div className="flex justify-start lg:col-span-5 lg:justify-end">
-            {/* 💡 lg:max-w-[75%] 설정을 추가하여 기존보다 가로폭이 한층 더 콤팩트하고 얄쌍하게 떨어집니다. */}
+            {/* lg:max-w-[75%] 설정을 추가하여 기존보다 가로폭이 한층 더 콤팩트하고 얄쌍하게 떨어집니다. */}
             <div className="w-full rounded-xl border border-white/10 bg-black/45 p-5 backdrop-blur-sm shadow-2xl lg:max-w-[75%]">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <h3 className="flex items-center gap-2 text-base font-bold text-white">
