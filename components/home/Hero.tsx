@@ -7,7 +7,6 @@ import { siteConfig } from "@/data/site";
 
 export function Hero() {
   return (
-    /* 💡 pt-32, md:pt-40(위쪽 여백)을 줘서 이미지는 최고 꼭대기까지 뻗되, 글자들은 투명 헤더 아래에서 딱 시작하게 맞췄습니다. */
     <section className="relative flex min-h-[75vh] items-center overflow-hidden bg-slate-900 text-white pt-32 pb-16 md:pt-40 md:pb-24">
       
       {/* 1. 배경 이미지 영역 */}
@@ -15,14 +14,14 @@ export function Hero() {
         <img 
           src="/hero-bg.jpg" 
           alt="Research Lab Background" 
-          /* 💡 opacity-75로 설정하여 이미지를 훨씬 더 밝고 원본에 가깝게 표출합니다. */
-          className="h-full w-full object-cover opacity-75"
+          /* 💡 opacity-90으로 설정하여 원본에 아주 가까운 밝고 선명한 상태로 이미지를 보여줍니다. */
+          className="h-full w-full object-cover opacity-90"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
           }}
         />
-        {/* 💡 가독성을 위한 최소한의 하단/상단 어두운 섀도우 그라데이션만 얹고 중앙은 이미지 그대로 투명하게 노출합니다. */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-slate-950/70" />
+        {/* 💡 이미지 본연의 밝기를 살리기 위해 중간 투명막(via)을 없애고 위아래 그림자만 아주 얇게 주어 글씨 가독성만 최소한으로 확보합니다. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/40" />
       </div>
 
       {/* 2. 실제 콘텐츠 영역 */}
@@ -37,7 +36,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-khu-gold"
+            className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-khu-gold drop-shadow"
           >
             {siteConfig.university}
           </motion.p>
@@ -46,8 +45,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            /* 💡 글자가 배경에 묻히지 않도록 드롭 섀도우(shadow-sm) 효과를 글씨에 추가했습니다. */
-            className="text-4xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md sm:text-5xl lg:text-6xl"
+            /* 💡 배경이 밝아진 만큼 글씨가 묻히지 않도록 글씨 뒤편 섀도우(drop-shadow-lg)를 한 단계 더 강조했습니다. */
+            className="text-4xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg sm:text-5xl lg:text-6xl"
           >
             Energy Nanomaterials
             <br />
@@ -58,7 +57,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="mt-6 max-w-2xl text-base leading-relaxed text-white drop-shadow-sm sm:text-lg"
+            className="mt-6 max-w-2xl text-base leading-relaxed text-white drop-shadow-md sm:text-lg"
           >
             {siteConfig.tagline}. Advancing perovskite photovoltaics, light-emitting
             devices, neuromorphic optics, and soft electronics for a sustainable
@@ -75,7 +74,7 @@ export function Hero() {
               Explore Research
               <ArrowRight size={20} className="ml-1" />
             </Button>
-            <Button href="/join-us" variant="outline" size="lg" className="border-white/40 text-white hover:border-white hover:bg-white hover:text-khu-navy">
+            <Button href="/join-us" variant="outline" size="lg" className="border-white/50 text-white hover:border-white hover:bg-white hover:text-khu-navy drop-shadow-md">
               Join Our Team
             </Button>
           </motion.div>
@@ -88,12 +87,11 @@ export function Hero() {
           transition={{ delay: 1.2 }}
           className="absolute bottom-4 left-1/2 -translate-x-1/2"
         >
-          <ChevronDown className="animate-bounce text-white/60" size={24} />
+          <ChevronDown className="animate-bounce text-white/80 filter drop-shadow" size={24} />
         </motion.div>
       </div>
     </section>
   );
 }
 
-// 빌드 에러 이중 방어막
 export default Hero;
