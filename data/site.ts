@@ -1,15 +1,15 @@
 export const siteConfig = {
   name: "Energy Nanomaterials Laboratory",
-  shortName: "ENL",
-  university: "Kyung Hee University",
+  shortName: "Kyung Hee University",
+  university: ENL",
   department: "Department of Electronic Engineering",
   tagline: "Pioneering next-generation energy and optoelectronic nanomaterials",
   description:
     "The Energy Nanomaterials Laboratory at Kyung Hee University advances perovskite photovoltaics, light-emitting devices, neuromorphic optics, and soft electronics for sustainable energy technologies.",
   email: "enl@khu.ac.kr",
-  phone: "+82-31-201-XXXX",
+  phone: "+82-31-201-2989",
   address: {
-    building: "Engineering Building, Room 4XX",
+    building: "Engineering Building, #472/Engineering Experimental Building, #116",
     street: "1732 Deogyeong-daero",
     city: "Yongin-si",
     region: "Gyeonggi-do",
