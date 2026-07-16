@@ -27,7 +27,7 @@ export function Hero() {
       {/* 3. 실제 콘텐츠 영역 (relative z-10 부여로 이미지 위로 띄움) */}
       <div className="container-narrow relative z-10 w-full px-4 py-16 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 70 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl"
