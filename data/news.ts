@@ -14,23 +14,23 @@ export const labNews: NewsItem[] = [
   {
     id: 1,
     date: "2026.07",
-    title: "Applied Surface Science paper is highlighted Perovskite Info.",
+    title: "Applied Surface Science paper is highlighted in Perovskite Info.",
     category: "news",
-    summary: "ENL welcomes Dr. Namita Ahir, who has joined our research group as a Postdoctoral Researcher.",
+    summary: "Jae Hyeok's work is highlighted as a promising way to prepare high performance perovskite solar cells.",
   },
   {
     id: 2,
     date: "2026.06",
     title: "Jae Hyeok's polystyrene-perovksite paper is published in Applied Surface Science.",
     category: "news",
-    summary: "Our proud alumnus Sang-Hyun Oh has been officially promoted to Ph.D. Candidate at UMN CEMS.",
+    summary: "Jae Hyeok's first work-perovksite engineering by polystyrene is accepted in Applied Surface Science.",
   },
   {
     id: 3,
-    date: "2025.10",
-    title: "Ammarah Razzaq joined our lab for her Ph.D. program.",
+    date: "2026.05",
+    title: "Dong Yun's study on Pb-free perovskite LEDs is accepted in ACS Energy Letters.",
     category: "academic",
-    summary: "Ammarah Razzaq joined the Energy Nanomaterials Laboratory as a new Ph.D. candidate.",
+    summary: "Dong Yun rationalizes SAM-decorated PEDOT:PSS for high performance NIR Sn-PeLEDs.",
   },
 ];
 
