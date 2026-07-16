@@ -19,8 +19,8 @@ export function PageHero({ title, subtitle, className }: PageHeroProps) {
         <div className="absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-blue-400 blur-3xl" />
       </div>
       <div className="container-narrow relative">
-        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          {title}
+        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+  {title}
         </h1>
         {subtitle && (
           <p className="mt-4 max-w-2xl text-lg text-white/80 sm:text-xl">{subtitle}</p>
