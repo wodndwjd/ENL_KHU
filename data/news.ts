@@ -13,15 +13,15 @@ export interface NewsItem {
 export const labNews: NewsItem[] = [
   {
     id: 1,
-    date: "2026.06",
-    title: "Dr. Namita Ahir joined ENL as a Postdoctoral Researcher.",
+    date: "2026.07",
+    title: "Applied Surface Science paper is highlighted Perovskite Info.",
     category: "news",
     summary: "ENL welcomes Dr. Namita Ahir, who has joined our research group as a Postdoctoral Researcher.",
   },
   {
     id: 2,
-    date: "2026.05",
-    title: "Sang-Hyun Oh (Alumnus) promoted to Ph.D. Candidate at UMN CEMS.",
+    date: "2026.06",
+    title: "Jae Hyeok's polystyrene-perovksite paper is published in Applied Surface Science.",
     category: "news",
     summary: "Our proud alumnus Sang-Hyun Oh has been officially promoted to Ph.D. Candidate at UMN CEMS.",
   },
