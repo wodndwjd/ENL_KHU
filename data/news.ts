@@ -5,35 +5,38 @@ export interface NewsItem {
   date: string;
   title: string;
   category: 'news' | 'academic' | 'notice';
+  summary?: string; // 👈 55번 줄 빌드 에러를 방지하기 위해 summary 타입을 추가합니다!
 }
 
-// 1. 통합 뉴스 데이터 리스트 (앞으로 최신 뉴스를 맨 위에 추가하시면 됩니다)
+// 1. 통합 뉴스 데이터 리스트
+// (원하신다면 summary 내용을 자유롭게 한 줄씩 작성해 주세요!)
 export const labNews: NewsItem[] = [
   {
     id: 1,
     date: "2026.06",
-    title: "Jae Hyeok's polystyrene work is highlighted in Perovskite Info.",
+    title: "Dr. Namita Ahir joined ENL as a Postdoctoral Researcher.",
     category: "news",
+    summary: "ENL welcomes Dr. Namita Ahir, who has joined our research group as a Postdoctoral Researcher.",
   },
   {
     id: 2,
     date: "2026.05",
     title: "Sang-Hyun Oh (Alumnus) promoted to Ph.D. Candidate at UMN CEMS.",
     category: "news",
+    summary: "Our proud alumnus Sang-Hyun Oh has been officially promoted to Ph.D. Candidate at UMN CEMS.",
   },
   {
     id: 3,
     date: "2025.10",
     title: "Ammarah Razzaq joined our lab for her Ph.D. program.",
     category: "academic",
+    summary: "Ammarah Razzaq joined the Energy Nanomaterials Laboratory as a new Ph.D. candidate.",
   },
 ];
 
-// 2. 다른 페이지(app/news/page.tsx 및 NewsSection.tsx)에서 참조하는 별칭 정의
 export const newsItems: NewsItem[] = labNews;
 export const featuredNews: NewsItem[] = labNews.slice(0, 3);
 
-// 3. 빌드 에러를 내던 카테고리 스타일 맵 정보 정의
 export const categoryColors = {
   news: "bg-blue-500/10 text-blue-400 border-blue-500/20",
   academic: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
