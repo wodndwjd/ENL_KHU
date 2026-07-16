@@ -12,8 +12,17 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    /* 💡 absolute, left-0, right-0, z-50을 주어 아래 Hero 섹션 이미지 위로 완전히 띄워 합칩니다. */
-    <header className="absolute left-0 right-0 top-0 z-50 border-b border-white/5 bg-transparent">
+    /* 💡 [초강력 처방] 클래스 단위(Tailwind)뿐만 아니라 inline style에 !important 처리를 주어 
+       전역 CSS나 브라우저 기본 스타일이 가로선을 강제로 긋는 것을 완벽하게 방어합니다. */
+    <header 
+      className="absolute left-0 right-0 top-0 z-50 bg-transparent border-none outline-none shadow-none"
+      style={{ 
+        border: 'none', 
+        borderBottom: 'none',
+        outline: 'none',
+        boxShadow: 'none'
+      }}
+    >
       <div className="container-narrow flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         
         {/* 1. 왼쪽 영역: [연구실 로고] + [텍스트 이름] */}
