@@ -1,83 +1,26 @@
+// data/news.ts
 export interface NewsItem {
-  id: string;
-  title: string;
+  id: number;
   date: string;
-  category: "award" | "publication" | "event" | "achievement" | "announcement";
-  summary: string;
-  featured?: boolean;
+  title: string;
+  content?: string; // 상세 내용이 필요할 경우를 대비
 }
 
-export const newsItems: NewsItem[] = [
+export const labNews: NewsItem[] = [
   {
-    id: "news-1",
-    title: "Nature Energy Paper on Tandem Perovskite/Silicon Cells Published",
-    date: "2025-03-15",
-    category: "publication",
-    summary:
-      "Our latest work on molecular interface passivation achieves record efficiency in monolithic tandem solar cells.",
-    featured: true,
+    id: 1,
+    date: "2026.06",
+    title: "Dr. Namita Ahir joined ENL as a Postdoctoral Researcher.",
   },
   {
-    id: "news-2",
-    title: "Prof. Kim Receives Korea Research Foundation Young Scientist Award",
-    date: "2025-02-28",
-    category: "award",
-    summary:
-      "Recognition for outstanding contributions to perovskite optoelectronics and energy nanomaterials research.",
-    featured: true,
+    id: 2,
+    date: "2026.05",
+    title: "Sang-Hyun Oh (Alumnus) promoted to Ph.D. Candidate at UMN CEMS.",
   },
   {
-    id: "news-3",
-    title: "ENL Hosts International Workshop on Perovskite Optoelectronics",
-    date: "2025-01-20",
-    category: "event",
-    summary:
-      "Over 120 researchers from 15 countries gathered at Kyung Hee University for two days of talks and collaboration.",
-    featured: true,
+    id: 3,
+    date: "2025.10",
+    title: "Ammarah Razzaq joined our lab for her Ph.D. program.",
   },
-  {
-    id: "news-4",
-    title: "Hyeon-Jun Lee Wins Best Poster Award at MRS Spring Meeting",
-    date: "2024-11-08",
-    category: "achievement",
-    summary:
-      "Ph.D. candidate recognized for work on scalable fabrication of perovskite tandem modules.",
-    featured: false,
-  },
-  {
-    id: "news-5",
-    title: "New NSF-KRF Collaborative Grant on Neuromorphic Photonics",
-    date: "2024-09-12",
-    category: "announcement",
-    summary:
-      "Three-year international collaboration with Northwestern University on reconfigurable optical computing.",
-    featured: false,
-  },
-  {
-    id: "news-6",
-    title: "Science Advances Paper on Optical Neuromorphic Metasurfaces",
-    date: "2024-07-22",
-    category: "publication",
-    summary:
-      "First demonstration of phase-change perovskite metasurfaces for in-situ reconfigurable optical synapses.",
-    featured: false,
-  },
+  // 앞으로 뉴스가 추가되면 여기에 계속 밑으로 받아 적으면 됩니다!
 ];
-
-export const featuredNews = newsItems.filter((n) => n.featured);
-
-export const categoryLabels: Record<NewsItem["category"], string> = {
-  award: "Award",
-  publication: "Publication",
-  event: "Event",
-  achievement: "Achievement",
-  announcement: "Announcement",
-};
-
-export const categoryColors: Record<NewsItem["category"], string> = {
-  award: "bg-amber-100 text-amber-800",
-  publication: "bg-blue-100 text-blue-800",
-  event: "bg-purple-100 text-purple-800",
-  achievement: "bg-emerald-100 text-emerald-800",
-  announcement: "bg-slate-100 text-slate-800",
-};
