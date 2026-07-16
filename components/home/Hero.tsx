@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Bell } from "lucide-react";
 
-// 1. 최신 뉴스 데이터 관리 (정돈된 데이터 구조)
+// 최신 뉴스 데이터
 const heroNews = [
   {
     id: 1,
@@ -25,14 +25,15 @@ const heroNews = [
 export function Hero() {
   return (
     <section 
-      className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-slate-900 text-white pt-28 pb-12"
+      /* 💡 높이를 min-h-[50vh]로 줄여 한눈에 쏙 들어오게 맞췄습니다. */
+      className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-slate-900 text-white pt-28 pb-10"
       style={{
         border: "none",
         outline: "none",
         boxShadow: "none",
       }}
     >
-      {/* 배경 이미지 영역 (선명도 90% 및 세련된 그라데이션 차광막) */}
+      {/* 배경 이미지 영역 (선명도는 살리고, 어두운 그라데이션 필터는 30% 수준으로 확 낮춤) */}
       <div className="absolute inset-0 z-0">
         <img
           src="/hero-bg.jpg"
@@ -42,10 +43,11 @@ export function Hero() {
             e.currentTarget.style.display = "none";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/50" />
+        {/* 💡 어두운 그림자 장막의 투명도를 opacity-30으로 옅게 주어 배경 사진이 아주 환하게 보입니다. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950 opacity-30" />
       </div>
 
-      {/* 메인 콘텐츠 바디 (좌소개 / 우뉴스 2단 배치) */}
+      {/* 메인 콘텐츠 영역 (좌소개 / 우뉴스 2단 배치) */}
       <div className="container-narrow relative z-10 w-full px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
           
@@ -80,9 +82,10 @@ export function Hero() {
             </div>
           </div>
 
-          {/* [우측 영역] 최신 뉴스 미니 전광판 */}
-          <div className="lg:col-span-5">
-            <div className="rounded-xl border border-white/10 bg-black/45 p-5 backdrop-blur-md shadow-2xl">
+          {/* [우측 영역] 가로폭이 70% 수준으로 슬림해진 최신 뉴스 미니 보드 */}
+          <div className="flex justify-start lg:col-span-5 lg:justify-end">
+            {/* 💡 lg:max-w-[75%] 설정을 추가하여 기존보다 가로폭이 한층 더 콤팩트하고 얄쌍하게 떨어집니다. */}
+            <div className="w-full rounded-xl border border-white/10 bg-black/45 p-5 backdrop-blur-sm shadow-2xl lg:max-w-[75%]">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <h3 className="flex items-center gap-2 text-base font-bold text-white">
                   <Bell className="h-4 w-4 text-khu-gold" />
