@@ -32,6 +32,13 @@ export const labNews: NewsItem[] = [
     category: "academic",
     summary: "Dong Yun rationalizes SAM-decorated PEDOT:PSS for high performance NIR Sn-PeLEDs.",
   },
+  {
+    id: 4,
+    date: "2026.04",
+    title: "New Lab-webpage is under construction.",
+    category: "academic",
+    summary: "New Lab-webpage will come out in coming Summer, 2026.",
+  },
 ];
 
 export const newsItems: NewsItem[] = labNews;
