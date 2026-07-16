@@ -12,8 +12,8 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    /* 💡 border-b와 border-white/... 클래스를 제거하여 헤더 하단의 가로 경계선을 완전히 없앴습니다. */
-    <header className="absolute left-0 right-0 top-0 z-50 bg-transparent">
+    /* 💡 border 관련 속성을 완전히 박멸하고, backdrop-blur나 shadow 같이 미세한 선을 만들어낼 수 있는 요소를 100% 제거했습니다. */
+    <header className="absolute left-0 right-0 top-0 z-50 bg-transparent border-none outline-none shadow-none">
       <div className="container-narrow flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         
         {/* 1. 왼쪽 영역: [연구실 로고] + [텍스트 이름] */}
